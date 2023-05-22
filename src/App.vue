@@ -2,7 +2,7 @@
 let fn = () => {
   console.log('11111')
 }
-let str = "测试";
+let str = '测试'
 </script>
 
 <template>
