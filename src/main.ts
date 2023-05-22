@@ -1,10 +1,22 @@
 import { createApp } from 'vue'
-// @ts-ignore
-import App from './App.vue'
-createApp(App).mount('#app')
-
-const fn = () => {
-  console.log('fn')
-}
-
-fn()
+import App from '@/App.vue'
+// 引入element-plus
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+// @ts-expect-error忽略当前文件ts类型的检测否则有红色提示(打包会失败)
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+// svg用到的配置
+import 'virtual:svg-icons-register'
+// 引入全局组件
+import globalComponent from '@/components/index.ts'
+// 引入全局样式
+import '@/styles/index.scss'
+import '../scritps/preinstall.js'
+const app = createApp(App)
+app.use(ElementPlus, {
+  locale: zhCn,
+})
+app.use(globalComponent)
+app.use(ElementPlus)
+// 将应用挂载到dom中
+app.mount('#app')
