@@ -1,7 +1,6 @@
 <script setup>
-
-let aa="dddd";
-console.log(aa);
+let aa = 'dddd'
+console.log(aa)
 </script>
 
 <template>
