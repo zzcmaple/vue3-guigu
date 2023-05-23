@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from '@/App.vue'
+import App from './App.vue'
 // 引入element-plus
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
@@ -11,7 +11,6 @@ import 'virtual:svg-icons-register'
 import globalComponent from '@/components/index.ts'
 // 引入全局样式
 import '@/styles/index.scss'
-import '../scritps/preinstall.js'
 const app = createApp(App)
 app.use(ElementPlus, {
   locale: zhCn,
