@@ -1,17 +1,11 @@
 <script setup>
+let aa = 'dddd'
 
-
-let aa = "dddd";
-
-
-console.log(aa);
+console.log(aa)
 </script>
 
 <template>
   <div>
-
-
-
     <router-view />
   </div>
 </template>

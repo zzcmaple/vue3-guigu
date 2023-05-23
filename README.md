@@ -21,3 +21,19 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
 
 1. `npm i -g pnpm`
 2. `pnpm i`
+
+## 项目做了git提交限制
+
+1. `commit时的message必须带有下述前缀，例如：feat: 新增xxx功能`
+   1. 'feat',//新特性、新功能
+   2. 'fix',//修改bug
+   3. 'docs',//文档修改
+   4. 'style',//代码格式修改, 注意不是 css 修改
+   5. 'refactor',//代码重构
+   6. 'perf',//优化相关，比如提升性能、体验
+   7. 'test',//测试用例修改
+   8. 'chore',//其他修改, 比如改变构建流程、或者增加依赖库、工具等
+   9. 'revert',//回滚到上一个版本
+   10. 'build',//编译相关的修改，例如发布版本、对项目构建或者依赖的改动
+2. `当commit时，会进行对项目格式化，格式化后需要重新commit提交`
+
