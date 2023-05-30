@@ -75,7 +75,13 @@ const login = async () => {
             ></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button :loading="loading" type="primary" @click="submitLogin(loginFormRef)">登录</el-button>
+            <el-button
+              :loading="loading"
+              type="primary"
+              @click="submitLogin(loginFormRef)"
+            >
+              登录
+            </el-button>
           </el-form-item>
         </el-form>
       </el-col>
