@@ -35,10 +35,10 @@ export default [
     method: 'post', //请求方式
     response: ({ body }) => {
       //获取请求体携带过来的用户名与密码
-      const { username, password } = body
+      const { userName, password } = body
       //调用获取用户信息函数,用于判断是否有此用户
       const checkUser = createUserList().find(
-        (item) => item.username === username && item.password === password,
+        (item) => item.username === userName && item.password === password,
       )
       //没有用户返回失败信息
       if (!checkUser) {

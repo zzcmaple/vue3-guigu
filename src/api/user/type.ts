@@ -1,10 +1,11 @@
 // 登录接口的参数类型
 export interface LoginFormData {
-  username: string
+  userName: string
   password: string
 }
 interface loginDataType {
-  token: string
+  token?: string
+  message?: string
 }
 export interface loginResData {
   code: number
