@@ -3,7 +3,7 @@ export interface LoginFormData {
   userName: string
   password: string
 }
-interface loginDataType {
+export interface loginDataType {
   token?: string
   message?: string
 }

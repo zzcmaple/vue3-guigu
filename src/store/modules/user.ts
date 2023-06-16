@@ -1,19 +1,25 @@
 import { defineStore } from 'pinia'
-
+import { loginReq } from '@/api/user'
+import type { LoginFormData, loginDataType } from '@/api/user/type'
+import type { useUserStoreType } from './types/type'
+import { SET_TOKEN, GET_TOKEN } from '@/utils/token.ts'
 export const useUserStore = defineStore('User', {
-  state: () => {
+  state: (): useUserStoreType => {
     return {
-      token: '11111',
+      token: GET_TOKEN(),
     }
   },
   actions: {
-    setToken(token: string) {
-      this.token = token
+    async userLogin(formData: LoginFormData) {
+      const { code, data }: { code: number; data: loginDataType } =
+        await loginReq(formData)
+      if (code === 200) {
+        this.token = data.token as string
+        SET_TOKEN(data.token as string)
+      } else {
+        return Promise.reject(data.message)
+      }
     },
   },
-  getters: {
-    getToken: (state) => {
-      return state.token + '11111111111'
-    },
-  },
+  getters: {},
 })
