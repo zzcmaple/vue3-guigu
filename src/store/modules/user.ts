@@ -3,10 +3,13 @@ import { loginReq } from '@/api/user'
 import type { LoginFormData, loginDataType } from '@/api/user/type'
 import type { useUserStoreType } from './types/type'
 import { SET_TOKEN, GET_TOKEN } from '@/utils/token.ts'
+// 引入常量路由
+import { constantRoutes } from '@/router/routes.ts'
 export const useUserStore = defineStore('User', {
   state: (): useUserStoreType => {
     return {
       token: GET_TOKEN(),
+      menuRoutes: constantRoutes,
     }
   },
   actions: {
