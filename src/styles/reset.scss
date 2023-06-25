@@ -90,13 +90,10 @@ mark,
 audio,
 video {
   font: inherit;
-  font-size: 100%;
-
+  font-size: 13px;
   margin: 0;
   padding: 0;
-
   vertical-align: baseline;
-
   border: 0;
 }
 
@@ -158,8 +155,6 @@ input,
 textarea,
 button {
   font-family: inhert;
-  font-size: inherit;
-
   color: inherit;
 }
 
@@ -177,8 +172,3 @@ select::-ms-expand {
   display: none;
 }
 
-code,
-pre {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}

@@ -5,10 +5,9 @@ import {
   createWebHistory,
 } from 'vue-router'
 import { constantRoutes } from './routes'
-
 const router = createRouter({
   history:
-    import.meta.env.NODE_ENV === 'development'
+    import.meta.env.MODE === 'development'
       ? createWebHashHistory()
       : createWebHistory(),
   routes: constantRoutes,

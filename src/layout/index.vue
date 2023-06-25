@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import logo from '@/layout/logo/index.vue'
 import asideMenu from '@/layout/menu/index.vue'
+import mainBox from '@/layout/main/index.vue'
+import headerBox from '@/layout/header/index.vue'
 import { useUserStore } from '@/store/modules/user.ts'
+import { useRoute } from 'vue-router'
+const route = useRoute()
 let userStore = useUserStore()
 </script>
 
@@ -11,167 +15,18 @@ let userStore = useUserStore()
       <el-aside>
         <logo />
         <el-scrollbar class="asideScrollbar">
-          <el-menu>
+          <el-menu :default-active="route.path">
             <asideMenu :menuRoutes="userStore.menuRoutes" />
           </el-menu>
         </el-scrollbar>
       </el-aside>
       <el-container>
-        <el-header>Header</el-header>
+        <el-header>
+          <headerBox />
+        </el-header>
         <el-main>
           <el-scrollbar height="100%">
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1</p>
-            <p>1d</p>
+            <mainBox></mainBox>
           </el-scrollbar>
         </el-main>
       </el-container>
@@ -189,15 +44,20 @@ let userStore = useUserStore()
   }
   :deep(.el-header) {
     background-color: $base_container_bg;
+    background-image: linear-gradient(to right, #ff6e7f, #bfe9ff);
   }
   :deep(.el-aside) {
     width: $base_menu_width;
     background-color: $base_menu_bg;
+    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
     color: $base_text_color_white;
     .asideScrollbar {
       width: 100%;
       height: calc(100vh - 60px);
       padding: 0;
+    }
+    .el-menu {
+      border-right: none;
     }
   }
   :deep(.el-scrollbar) {

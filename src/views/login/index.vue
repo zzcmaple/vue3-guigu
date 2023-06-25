@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive, onMounted } from 'vue'
+import { ref, reactive } from 'vue'
 import { User, Lock } from '@element-plus/icons-vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage } from 'element-plus'
@@ -44,7 +44,7 @@ const login = async () => {
     await userStore.userLogin(ruleForm)
     loading.value = false
     ElMessage.success('登录成功')
-    router.push('/')
+    await router.push('/')
   } catch (msg) {
     loading.value = false
     ElMessage.error(msg)
@@ -54,16 +54,15 @@ const login = async () => {
 
 <template>
   <div class="login_box">
-    <el-row>
-      <el-col :span="12" :xs="0"></el-col>
-      <el-col :span="12" :xs="24">
+    <el-row justify="center" align="middle">
+      <el-col :span="24" :xs="24">
         <el-form
           class="login_form"
           ref="loginFormRef"
           :model="ruleForm"
           :rules="rules"
         >
-          <h1>Hello</h1>
+          <h1>登录</h1>
           <el-form-item prop="userName">
             <el-input
               class="w-50 m-2"
@@ -102,18 +101,38 @@ const login = async () => {
 .login_box {
   width: 100%;
   height: 100vh;
-  background-image: url('@/assets/images/bgI.jpg');
+  background-image: url('@/assets/images/bg@2x.cb444902.png');
   background-size: cover;
   background-repeat: no-repeat;
+  .el-row {
+    height: 100%;
+    .el-col {
+      display: flex;
+      justify-content: center;
+    }
+  }
   .login_form {
-    position: relative;
-    top: 30vh;
-    padding: 20px;
-    width: 400px;
-    background-color: antiquewhite;
+    padding: 30px;
+    width: 360px;
+    border-radius: 8px;
+    background-color: $base_container_bg;
+    box-shadow: 0 4px 24px $base_box_shadow_color;
+    .el-input {
+      --el-input-height: 40px;
+      :deep(.el-input__wrapper) {
+        background-color: #f7f7f9;
+        &:hover {
+          background-color: #f3f3f4;
+        }
+        &:focus {
+          box-shadow: 0 0 0 1px red;
+        }
+      }
+    }
     h1 {
-      color: white;
-      font-size: 40px;
+      color: #19191a;
+      font-size: 20px;
+      font-weight: 500;
       margin-bottom: 20px;
     }
   }

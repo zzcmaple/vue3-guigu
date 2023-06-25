@@ -20,7 +20,7 @@
   height: 60px;
   padding-top: 10px;
   p {
-    color: $base_text_color_white;
+    color: $base_text_color_black;
   }
   :deep(.el-avatar--circle) {
     margin: 0 20px;
