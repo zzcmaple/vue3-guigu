@@ -1,5 +1,16 @@
 // 用于存放一些全局变量
 
-$red: red;
-$pointer: pointer;
-$tenWidth: 10px;
+// 左侧菜单宽度
+$base_menu_width: 250px;
+// 左侧菜单背景颜色
+$base_menu_bg: #fff;
+// 最外层的背景颜色
+$base_layout_bg: #f5f5f5;
+// 基础容器颜色
+$base_container_bg: #fff;
+// 基础文字颜色之白色
+$base_text_color_white: #ffffff;
+// 基础文字颜色之黑色
+$base_text_color_black: #333333;
+// 盒子阴影颜色变量
+$base_box_shadow_color: rgba(128, 128, 128, .1);

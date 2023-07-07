@@ -11,11 +11,16 @@ import 'virtual:svg-icons-register'
 import globalComponent from '@/components/index.ts'
 // 引入全局样式
 import '@/styles/index.scss'
+// 引入路由
+import router from '@/router/index.ts'
+// 引入pinia
+import pinia from '@/store/index.ts'
 const app = createApp(App)
 app.use(ElementPlus, {
   locale: zhCn,
 })
+app.use(router)
+app.use(pinia)
 app.use(globalComponent)
-app.use(ElementPlus)
 // 将应用挂载到dom中
 app.mount('#app')
